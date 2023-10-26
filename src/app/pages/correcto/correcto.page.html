@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title #titulo>
+      <div>
+        <img id=logo src="/assets/duoc-logo-s.png" alt="image">
+        <p id=parrafo>Sistema de asistencia DUOC</p>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding-vertical">
+    <ion-card class="ion-text-center ion-padding-vertical">
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h2>Recuperar Contraseña</h2>
+        </ion-label>
+      </ion-card-title>
+      <form>
+        <!-- Contenido del card -->
+        <ion-card-content>
+          <div>
+            <img src="/assets/thumbsup.png" id="imagen">
+          </div>
+            <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
+          
+          <br>
+          <h1>¡Correcto!</h1>
+          <br>
+          <!-- Se debe usar (click) para enlazar con el método de la clase en typescript -->
+          <h2>Tu contraseña es:</h2>
+          <div class="datoFinal">
+            {{datoFinal}}
+          </div>
+
+        </ion-card-content>
+      </form>
+    </ion-card>
+  </div>
+  <div class="ion-text-center">
+    <a [routerLink]="['/ingreso']">Volver al Login</a>
+  </div>
+</ion-content>

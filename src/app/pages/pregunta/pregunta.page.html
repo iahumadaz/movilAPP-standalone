@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title #titulo>
+      <div>
+        <img id=logo src="/assets/duoc-logo-s.png" alt="image">
+        <p id=parrafo>Sistema de asistencia DUOC</p>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding-vertical">
+    <ion-card class="ion-text-center ion-padding-vertical">
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h2>Recuperar Contraseña</h2>
+          <h3 >Paso 2: Pregunta</h3>
+          <div class="laPregunta"> 
+            <p>{{usuario?.preguntaSecreta}}</p></div>
+        </ion-label>
+      </ion-card-title>
+      <ion-card-content>
+        
+        <ion-item>
+          <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
+          <ion-input [(ngModel)]="respuesta" name="respuesta" label="Aqui tu respuesta" labelPlacement="floating" type="text"></ion-input>
+        </ion-item>
+        <br>
+        <!-- Se debe usar (click) para enlazar con el método de la clase en typescript -->
+        <ion-button (click)="aPaginaComprobacion()" expand="block">
+          Recuperar Contraseña
+        </ion-button>
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+  <div class="ion-text-center">
+    <a [routerLink]="['/ingreso']">Volver al Login</a>
+  </div>
+</ion-content>
